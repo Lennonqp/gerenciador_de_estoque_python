@@ -6,7 +6,7 @@ class No:
         self.quantidade = quantidade
 
         self.proximo = None
-
+hj
 class lista:
     def __init__(self):
         self.primeiro = None
@@ -47,6 +47,31 @@ class lista:
         
         procura.quantidade = quantidade
 
+        def buscar(self, codigo):
+        atual = self.primeiro
+        while atual is not None:
+            if atual.codigo == codigo:
+        return atual
+        atual = atual.proximo
+        return None
+
+    def excluir(self, codigo):
+    atual = self.primeiro
+    anterior = None
+
+    while atual is not None:
+        if atual.codigo == codigo:
+            if anterior is None:
+                self.primeiro = atual.proximo
+            else:
+                anterior.proximo = atual.proximo
+            print("Produto removido!")
+            return
+        anterior = atual
+        atual = atual.proximo
+
+    print("Produto não encontrado!")
+
 def main():
     estoque = lista()
     while True:
@@ -55,11 +80,16 @@ def main():
         print("2 - Exibir relatório")
         print("3 - Excluir produto")
         print("4 - Atualizar Quantidades")
+        print("5 - Buscar produto")
         resposta = input()
 
 
         if resposta == "1":
-            estoque.inserir_produto()
+           codigo = input("Código: ")
+           nome = input("Nome: ")
+           preco = float(input("Preço: "))
+           quantidade = int(input("Quantidade: "))
+           estoque.inserir_produto(codigo, nome, preco, quantidade)
     
 
 

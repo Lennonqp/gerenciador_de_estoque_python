@@ -6,8 +6,12 @@ class No:
         self.quantidade = quantidade
 
         self.proximo = None
+<<<<<<< HEAD
 
 
+=======
+hj
+>>>>>>> 7c11a4bbf97d54e5b57bca6216e943a027c02148
 class lista:
     def __init__(self):
         self.primeiro = None
@@ -44,6 +48,7 @@ class lista:
 
         procura.quantidade = quantidade
 
+<<<<<<< HEAD
     def buscar(self, codigo):
         atual = self.primeiro
         while atual is not None:
@@ -68,6 +73,32 @@ class lista:
             atual = atual.proximo
 
         print("Produto não encontrado!")
+=======
+        def buscar(self, codigo):
+        atual = self.primeiro
+        while atual is not None:
+            if atual.codigo == codigo:
+        return atual
+        atual = atual.proximo
+        return None
+
+    def excluir(self, codigo):
+    atual = self.primeiro
+    anterior = None
+
+    while atual is not None:
+        if atual.codigo == codigo:
+            if anterior is None:
+                self.primeiro = atual.proximo
+            else:
+                anterior.proximo = atual.proximo
+            print("Produto removido!")
+            return
+        anterior = atual
+        atual = atual.proximo
+
+    print("Produto não encontrado!")
+>>>>>>> 7c11a4bbf97d54e5b57bca6216e943a027c02148
 
 def main():
     estoque = lista()
@@ -78,6 +109,7 @@ def main():
         print("3 - Excluir produto")
         print("4 - Atualizar Quantidades")
         print("5 - Buscar produto")
+<<<<<<< HEAD
         print("0 - Sair do sistema")
         
         resposta = input("Escolha uma opção: ")
@@ -133,6 +165,19 @@ def main():
             
         else:
             print("Opção inválida! Por favor, escolha um número de 0 a 5.")
+=======
+        resposta = input()
+
+
+        if resposta == "1":
+           codigo = input("Código: ")
+           nome = input("Nome: ")
+           preco = float(input("Preço: "))
+           quantidade = int(input("Quantidade: "))
+           estoque.inserir_produto(codigo, nome, preco, quantidade)
+    
+
+>>>>>>> 7c11a4bbf97d54e5b57bca6216e943a027c02148
 
 if __name__ == "__main__":
     main()

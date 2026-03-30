@@ -6,12 +6,8 @@ class No:
         self.quantidade = quantidade
 
         self.proximo = None
-<<<<<<< HEAD
 
 
-=======
-hj
->>>>>>> 7c11a4bbf97d54e5b57bca6216e943a027c02148
 class lista:
     def __init__(self):
         self.primeiro = None
@@ -48,7 +44,6 @@ class lista:
 
         procura.quantidade = quantidade
 
-<<<<<<< HEAD
     def buscar(self, codigo):
         atual = self.primeiro
         while atual is not None:
@@ -73,32 +68,6 @@ class lista:
             atual = atual.proximo
 
         print("Produto não encontrado!")
-=======
-        def buscar(self, codigo):
-        atual = self.primeiro
-        while atual is not None:
-            if atual.codigo == codigo:
-        return atual
-        atual = atual.proximo
-        return None
-
-    def excluir(self, codigo):
-    atual = self.primeiro
-    anterior = None
-
-    while atual is not None:
-        if atual.codigo == codigo:
-            if anterior is None:
-                self.primeiro = atual.proximo
-            else:
-                anterior.proximo = atual.proximo
-            print("Produto removido!")
-            return
-        anterior = atual
-        atual = atual.proximo
-
-    print("Produto não encontrado!")
->>>>>>> 7c11a4bbf97d54e5b57bca6216e943a027c02148
 
 def main():
     estoque = lista()
@@ -109,7 +78,6 @@ def main():
         print("3 - Excluir produto")
         print("4 - Atualizar Quantidades")
         print("5 - Buscar produto")
-<<<<<<< HEAD
         print("0 - Sair do sistema")
         
         resposta = input("Escolha uma opção: ")
@@ -133,26 +101,22 @@ def main():
         elif resposta == "4":
             codigo = input("Digite o código do produto: ")
             
-            # 1. Primeiro verificamos se o produto existe
             produto_encontrado = estoque.buscar(codigo)
             
             if produto_encontrado is not None:
-                # 2. Só pedimos a quantidade se ele existir!
                 print(f"Produto atual: {produto_encontrado.nome} | Estoque: {produto_encontrado.quantidade}")
                 quantidade = int(input("Digite a nova quantidade: "))
                 
-                # 3. Mandamos atualizar
                 estoque.atualizar_quantidades(codigo, quantidade)
                 print("Quantidade atualizada com sucesso!")
             else:
-                # Se não existir, barramos na hora
                 print("Produto não encontrado no estoque! Não é possível atualizar.")
             
         elif resposta == "5":
             codigo = input("Digite o código do produto que deseja buscar: ")
-            # A função buscar retorna o nó inteiro (ou None), então precisamos guardar isso numa variável
+         
             produto_encontrado = estoque.buscar(codigo)
-            
+
             if produto_encontrado is not None:
                 print(f"\nProduto encontrado: {produto_encontrado.nome}")
                 print(f"Preço: R$ {produto_encontrado.preco} | Quantidade em estoque: {produto_encontrado.quantidade}")
@@ -161,23 +125,10 @@ def main():
                 
         elif resposta == "0":
             print("Saindo do sistema. Até logo!")
-            break # Encerra o laço while infinito
+            break 
             
         else:
             print("Opção inválida! Por favor, escolha um número de 0 a 5.")
-=======
-        resposta = input()
-
-
-        if resposta == "1":
-           codigo = input("Código: ")
-           nome = input("Nome: ")
-           preco = float(input("Preço: "))
-           quantidade = int(input("Quantidade: "))
-           estoque.inserir_produto(codigo, nome, preco, quantidade)
-    
-
->>>>>>> 7c11a4bbf97d54e5b57bca6216e943a027c02148
 
 if __name__ == "__main__":
     main()
